@@ -2,6 +2,7 @@
 This is a code challenge assignment for Gemini focuses on  'New Order API calls'
 
 ####Assumption
+
     All the api calls are for BTCUSD
     Amount : 1 
     All the Order Request will have response isLive = True ( That means it should be part of order-active status
