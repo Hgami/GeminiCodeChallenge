@@ -5,6 +5,8 @@ This is a code challenge assignment for Gemini focuses on  'New Order API calls'
     All the api calls are for BTCUSD
     Amount : 1 
     All the Order Request will have response isLive = True ( That means it should be part of order-active status
+    Just run test_function.py file to execute the code.
+    Not adding requirnments.txt file as python3 is needed. 
 
 ####Test Cases
     In this assignment I have created 5 different test functions & they are as follows  
