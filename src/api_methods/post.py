@@ -29,6 +29,19 @@ def test_response_status(r):
 
 
 def post_api_call(endpoint, payload, api_call_name):
+    """
+        This is the main post api call
+
+        The first thing it will do is to add ['request'] and ['nounce'] into payload as it's required part for any api call
+        Then it will check what's the api call name and based upon that it will perform calls
+         - if it's "test_stop_limit_buy_order" or "test_stop_limit_sell_order" it will add more parameter into payload
+         - if it's "test_multiple_buy_order" it will send 20  api request for buying new orders and have status code as 429.
+         - if it's "check_balance_api" - it will check the balance and logs into console
+
+        After making a call we will use  'test_response_status' to check what's the status code and if it's proper as expected or not.
+        If not; we will exit the system.
+    """
+
     if payload is None:
         payload = {}
     request_url = base_url + endpoint

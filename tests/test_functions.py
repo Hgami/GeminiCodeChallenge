@@ -8,6 +8,21 @@ logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO)
 
 symbol = 'btcusd'
 
+"""
+   This file contains all the test functions related for new order api calls  
+   The one which are commented, can also be used after uncommenting them.
+   
+   Below two api calls are meant to be failed as part of negative testing
+    test_stop_limit_buy_order()
+    test_rate_limit_buy_orders()
+
+   Below 3 api calls should be succesded as part of positive testing 
+    test_new_buy_order()
+    test_new_sell_order()
+    test_stop_limit_sell_order()
+   
+"""
+
 
 def test_new_buy_order():
     new_buy_order = NewOrder().new_order('test_new_buy_order', symbol, "1", "40000", "buy", "exchange limit",
@@ -32,7 +47,7 @@ def test_stop_limit_buy_order():
 
 def test_stop_limit_sell_order():
     new_stop_limit_sell_order = NewOrder().new_order('test_stop_limit_sell_order', symbol, "1", "25000", "sell",
-                         "exchange stop limit", ["maker-or-cancel"])
+                                                     "exchange stop limit", ["maker-or-cancel"])
     print('New Stop Sell order id is : {}'.format(new_stop_limit_sell_order['order_id']))
     validate_response_fields_for_order(new_stop_limit_sell_order)
     get_all_active_order_details(new_stop_limit_sell_order['order_id'])
@@ -94,7 +109,6 @@ test_new_sell_order()
 test_stop_limit_sell_order()
 test_stop_limit_buy_order()
 test_rate_limit_buy_orders()
-
 
 # get_all_past_trades_for_btc()
 # check_balance_in_btc()

@@ -1,5 +1,9 @@
 from src.api_methods.post import post_api_call
 
+"""
+   Just a class for creating NewOrder Api call
+"""
+
 
 class NewOrder:
     @staticmethod
